@@ -1,0 +1,25 @@
+.btn{
+    border-radius: 100px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 93%, rgba(252,176,69,1) 100%);
+}
+.btn > link{
+    color: white;
+    
+}
+.navItem{
+ display: flex;
+ gap: 20px;
+ justify-content: center;
+ align-items: center;
+ text-transform: uppercase;
+ font-size: 15px;
+}
+.navItem1{
+    text-decoration: none;
+    color: #fff;
+}
+
+.navItem1:hover{
+   text-decoration: underline;
+}

@@ -1,0 +1,37 @@
+.paper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    /* max-width: 500px; */
+    /* width: 90%; */
+}
+
+.modalheader {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 100%;
+    border: 0.5px solid gray;
+    margin-top: 10px;
+    height: 400px;
+    /* padding: 10px; */
+}
+
+.Btn {
+    background-color: #ff9224 !important;
+}
