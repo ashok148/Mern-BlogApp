@@ -6,7 +6,7 @@ import { Grid, Typography, TextField, Link, Button, Avatar } from "@mui/material
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-import { authActions } from '../store';
+import { authActions } from '../store/authSlice';
 const Signup = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

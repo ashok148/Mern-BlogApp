@@ -6,7 +6,7 @@ import { Grid, Typography, TextField, Link, Button, Avatar } from "@mui/material
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { authActions } from '../store';
+import { authActions } from '../store/authSlice';
 
 const Login = () => {
     const isAuthenticated = useSelector((state) => state.isAuthenticated);
@@ -41,7 +41,7 @@ const Login = () => {
         console.log(inputs);  
           sendRequest()
              .then((data) => localStorage.setItem("userId", data.user._id))
-            .then(() => dispatch(authActions?.login()))
+            // .then(() => dispatch(authActions?.login()))
             .then(() => navigate("/blogs"));
       };
     console.log("isAuthenticated", isAuthenticated);
@@ -94,7 +94,7 @@ const Login = () => {
                         variant="contained"
                         color="primary"
                         // onClick={() => {
-                        //     dispatch(login());
+                        //    dispatch(authActions?.login())
                         // }}
                     >
                         Login

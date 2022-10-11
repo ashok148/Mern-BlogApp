@@ -6,7 +6,7 @@ import User from "../models/UserModel";
 export const getAllBlogs = async (req, res, next) => {
     let blogs;
     try {
-        blogs = await Blog.find().populate("user")
+        blogs = await Blog.find().populate("user");
     } catch (err) {
         console.log(err);
     }
@@ -88,17 +88,17 @@ export const getBlogById = async (req, res, next) => {
 }
 //delete blog
 export const deleteBlog = async (req, res, next) => {
-    const blogId = req.params.id;
+    const id = req.params.id;
     let blog;
     try {
-        blog = await Blog.findByIdAndRemove(blogId).populate("user");
-        await blog.user.blogs.pull(blog);
-        blog.user.save();
-    } catch(err) {
-        console.log(err);
+      blog = await Blog.findByIdAndRemove(id).populate("user");
+      await blog.user.blogs.pull(blog);
+      await blog.user.save();
+    } catch (err) {
+      console.log(err);
     }
-    if(!blog){ 
-    return res.status(500).json({message:"Unable to delete blog" });
+    if (!blog) {
+      return res.status(500).json({ message: "Unable To Delete" });
     }
     return res.status(200).json({ message: "Blog deleted successfully" });
 }
@@ -114,5 +114,5 @@ export const getbyUserId = async (req, res, next) => {
     if(!userBlogs){ 
     return res.status(404).json({message:"No blog found!" });
     }
-    return res.status(200).json({ blogs:userBlogs});
+    return res.status(200).json({ user: userBlogs});
 }

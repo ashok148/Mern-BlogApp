@@ -9,10 +9,11 @@ import Home from './components/Home/Home';
 import UserBlog from './components/Bolgs/UserBlogs';
 import AllBlog from './components/Bolgs/AllBlog';
 import Footer from './components/layouts/Footer/Footer';
+import EditBlog from './components/Home/EditBlog';
 
 function App() {
-  const isAuthenticated = useSelector((state) => state.isAuthenticated);
-  console.log(isAuthenticated)
+  // const isAuthenticated = useSelector((state) => state.isAuthenticated);
+  // console.log(isAuthenticated)
 
   return (
     <React.Fragment>
@@ -21,8 +22,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/myblogs" element={<UserBlog />} />
         <Route path="/blogs" element={<AllBlog />} />
+        <Route path="/myblogs" element={<UserBlog />} />
+        <Route path="/myblogs/:id" element={<EditBlog/> } />
       </Routes>
       <Footer />
     </React.Fragment>
