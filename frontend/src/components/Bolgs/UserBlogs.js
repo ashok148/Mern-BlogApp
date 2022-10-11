@@ -24,10 +24,10 @@ const UserBlog = () => {
     <div style={{ padding: "110px 20px 0px 20px", height: "auto",minHeight:"60vh" }}>
       <Grid container style={{ display: "flex", gap: "20px", justifyContent: "center", flexDirection: "row" }} >
         {user &&
-          user.blogs && user.blogs?.map((index) => {
+          user.blogs && user.blogs?.map((index,i) => {
             return (
               <BlogCard
-                key={index}
+                key={i}
                 id={index?._id}
                 name={user?.name}
                 title={index.title}

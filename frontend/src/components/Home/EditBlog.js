@@ -1,7 +1,8 @@
 
+import React, { useEffect, useState } from "react";
+import "./createBlogModal.css";
 import { Button, Grid, TextField, Typography, InputLabel } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const BlogDetail = () => {
@@ -53,16 +54,18 @@ const BlogDetail = () => {
     };
 
     return (
-        <div style={{ margin: "100px" }}>
+        <div style={{ margin: "150px 20px 20px 20px" }}>
             {inputs && (
-                <form onSubmit={handleSubmit}>
-                    <Grid container>
+               <Grid >
+               <form onSubmit={handleSubmit}>
+                    <Grid container  >
                         <Grid item xs={12}>
-                            <Typography fontWeight={"bold"} padding={3} color="grey" variant="h3" textAlign={"center"}>
+                            <Typography fontWeight={"bold"} padding={3} color="grey" variant="h4" textAlign={"center"}>
                                 Update Your Blog
                             </Typography></Grid>
+                        
+                        <Grid item xs={12} spacing={2} justifyContent="center">
                         <InputLabel>Title</InputLabel>
-                        <Grid item xs={12}>
                             <TextField
                                 variant="outlined"
                                 required
@@ -73,13 +76,16 @@ const BlogDetail = () => {
                                 onChange={handleChange}
                             />
                         </Grid>
+                       
+                        <Grid item xs={12} spacing={2} justifyContent="center">
                         <InputLabel>Description</InputLabel>
-                        <Grid item xs={12}>
                             <TextField
                                 name="description"
                                 variant="outlined"
                                 required
                                 fullWidth
+                                multiline
+                                maxRows={10}
                                 placeholder="Description.."
                                 onChange={handleChange}
                                 value={inputs.description}
@@ -92,6 +98,7 @@ const BlogDetail = () => {
                         </Grid>
                     </Grid>
                 </form>
+               </Grid>
             )}
         </div>
 

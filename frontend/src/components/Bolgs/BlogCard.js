@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { Grid, Paper } from '@material-ui/core';
 import "./BlogCard.css";
 import EditIcon from '@mui/icons-material/Edit';
@@ -10,6 +9,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import { Avatar } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+
 const BlogCard = (props) => {
     let id = props?.id;
     let userName = props?.name;
@@ -57,7 +57,7 @@ const BlogCard = (props) => {
                         {description}
                     </Grid>
                     <Grid item xs={12}>
-                        <img src={imageUrl} width="100%" height="100%" alt="image" />
+                        <img src={imageUrl} width="100%" height="100%" alt="" />
                     </Grid>
                     <Grid item xs={12}>
                         <div style={{ marginTop: "10px", justifyContent: "space-between", display: "flex", fontWeight: 100 }}>

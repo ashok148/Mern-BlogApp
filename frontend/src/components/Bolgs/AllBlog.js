@@ -22,10 +22,10 @@ console.log(blogs);
     return (
         <div style={{padding: "110px 20px 0px 20px",height: "auto",minHeight:"60vh"}}>
             <Grid container style={{display:"flex", gap:"20px",justifyContent:"center",flexDirection:"row"}} >
-               {blogs[0] && blogs?.map((index)=>{
+               {blogs[0] && blogs?.map((index,i)=>{
                 return (
                     <BlogCard 
-                    key={index}
+                    key={i}
                     id={index?._id}
                     name = {index.user?.name}
                     title = {index.title}

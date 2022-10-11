@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 const CreateBlogModal = (props) => {
     let handleClose = props?.onClose;
     const navigate = useNavigate();

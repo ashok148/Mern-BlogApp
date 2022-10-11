@@ -1,17 +1,17 @@
-const {createSlice} = require('@reduxjs/toolkit');
+const { createReducer } = require('@reduxjs/toolkit');
 
-const authSlice = createSlice({
-    name: "auth",
-    initialState: { isAuthenticated: false },
-    reducer: {
+const initialState = {
+    isAuthenticated: false
+};
+export const customReducer = createReducer(initialState,{
         login: (state) => {
             state.isAuthenticated = true
         },
         logout: (state) => {
             localStorage.removeItem("userId");
             state.isAuthenticated = false
-        }, 
-    },
-});
-export const {authActions} = authSlice.actions;
-export default authSlice.reducer;
+        },
+        increment: (state) => {
+            alert("hello")
+        },
+}); 

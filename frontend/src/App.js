@@ -1,20 +1,16 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Header from './components/layouts/Header/Header';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Home from './components/Home/Home';
 import UserBlog from './components/Bolgs/UserBlogs';
 import AllBlog from './components/Bolgs/AllBlog';
-import Footer from './components/layouts/Footer/Footer';
 import EditBlog from './components/Home/EditBlog';
+import Footer from './components/layouts/Footer/Footer';
 
 function App() {
-  // const isAuthenticated = useSelector((state) => state.isAuthenticated);
-  // console.log(isAuthenticated)
-
   return (
     <React.Fragment>
       <Header />
