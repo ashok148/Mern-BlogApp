@@ -4,6 +4,8 @@ import "./createBlogModal.css";
 import { Button, Grid, TextField, Typography, InputLabel } from "@mui/material";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Header from "../layouts/Header/Header";
+import Footer from "../layouts/Footer/Footer";
 
 const BlogDetail = () => {
     const navigate = useNavigate();
@@ -32,6 +34,7 @@ const BlogDetail = () => {
                 description: data.blog.description,
             });
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
     const sendRequest = async () => {
         const res = await axios
@@ -54,54 +57,57 @@ const BlogDetail = () => {
     };
 
     return (
-        <div style={{ margin: "150px 20px 20px 20px" }}>
-            {inputs && (
-               <Grid >
-               <form onSubmit={handleSubmit}>
-                    <Grid container  >
-                        <Grid item xs={12}>
-                            <Typography fontWeight={"bold"} padding={3} color="grey" variant="h4" textAlign={"center"}>
-                                Update Your Blog
-                            </Typography></Grid>
-                        
-                        <Grid item xs={12} spacing={2} justifyContent="center">
-                        <InputLabel>Title</InputLabel>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                placeholder="Title.."
-                                name="title"
-                                value={inputs.email}
-                                onChange={handleChange}
-                            />
-                        </Grid>
-                       
-                        <Grid item xs={12} spacing={2} justifyContent="center">
-                        <InputLabel>Description</InputLabel>
-                            <TextField
-                                name="description"
-                                variant="outlined"
-                                required
-                                fullWidth
-                                multiline
-                                maxRows={10}
-                                placeholder="Description.."
-                                onChange={handleChange}
-                                value={inputs.description}
-                            />
-                        </Grid>
-                        <Grid item xs={12} style={{display:"flex", justifyContent:"center",marginTop:"20px"}}>
-                            <Button variant="contained" color="warning" type="submit" >
-                                Submit
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </form>
-               </Grid>
-            )}
-        </div>
+        <>
+            <Header />
+            <div style={{ margin: "150px 20px 20px 20px" }}>
+                {inputs && (
+                    <Grid width='70%' margin='10px auto' minHeight="60vh">
+                        <form onSubmit={handleSubmit}>
+                            <Grid container spacing={5} >
+                                <Grid item xs={12} >
+                                    <Typography fontWeight={"bold"} padding={3} color="grey" variant="h4" textAlign={"center"}>
+                                        Update Your Blog
+                                    </Typography></Grid>
 
+                                <Grid item xs={12} spacing={3} justifyContent="center">
+                                    <InputLabel>Title</InputLabel>
+                                    <TextField
+                                        variant="outlined"
+                                        required
+                                        fullWidth
+                                        placeholder="Title.."
+                                        name="title"
+                                        value={inputs.email}
+                                        onChange={handleChange}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={12} spacing={3} justifyContent="center">
+                                    <InputLabel>Description</InputLabel>
+                                    <TextField
+                                        name="description"
+                                        variant="outlined"
+                                        required
+                                        fullWidth
+                                        multiline
+                                        maxRows={10}
+                                        placeholder="Description.."
+                                        onChange={handleChange}
+                                        value={inputs.description}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+                                    <Button variant="contained" color="warning" type="submit" >
+                                        Submit
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </form>
+                    </Grid>
+                )}
+            </div>
+            <Footer />
+        </>
     );
 };
 

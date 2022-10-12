@@ -1,5 +1,6 @@
 import { Grid, Paper } from '@material-ui/core';
 import "./BlogCard.css";
+import { useState } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
@@ -19,20 +20,23 @@ const BlogCard = (props) => {
     let isUser = props?.isUser;
     let loading = props?.loading;
     const navigate = useNavigate();
+    const [isReadMore, setIsReadMore] = useState(true);
 
     const handleEdit = () => {
         navigate(`/myblogs/${id}`);
     };
     const deleteRequest = async () => {
         const res = await axios
-          .delete(`http://localhost:5000/api/blog/delete/${id}`)
-          .catch((err) => console.log(err));
+            .delete(`http://localhost:5000/api/blog/delete/${id}`)
+            .catch((err) => console.log(err));
         const data = await res?.data;
         return data;
-      };
+    };
     const handleDelete = () => {
-        deleteRequest().then(()=>loading(true));
-        
+        deleteRequest().then(() => loading(true));
+    };
+    const toggleReadMore = () => {
+        setIsReadMore(!isReadMore);
     };
 
     return (
@@ -54,7 +58,12 @@ const BlogCard = (props) => {
                     </Grid>
                     <Grid item xs={12} style={{ marginBottom: "10px" }}>
                         <div style={{ color: "blue", fontSize: "20px" }}>{title}</div>
-                        {description}
+                        <p className="text">
+                            {isReadMore ? description.slice(0, 90) : description}
+                            <span onClick={toggleReadMore} className="read-or-hide">
+                                {isReadMore ? (description.length > 80 ? "...read more" : "") :( " show less")}
+                            </span>
+                        </p>
                     </Grid>
                     <Grid item xs={12}>
                         <img src={imageUrl} width="100%" height="100%" alt="" />

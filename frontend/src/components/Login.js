@@ -92,15 +92,12 @@ const Login = () => {
                         fullWidth
                         variant="contained"
                         color="primary"
-                        // onClick={() => {
-                        //    dispatch(authActions?.login())
-                        // }}
                     >
                         Login
                     </Button>
                     <Grid container justifyContent="space-between">
                         <Grid item>
-                            <Link href="/forgotPassword" variant="body2">
+                            <Link href="/login" variant="body2">
                                 Forgot Password?
                             </Link>
                         </Grid>
