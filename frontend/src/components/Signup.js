@@ -46,11 +46,11 @@ const Signup = () => {
 
     return (
         <Grid container display="flex" height="100vh">
-            <Grid item xs={0} sm={7}>
-                <img className='backImage' src="https://media.istockphoto.com/photos/laptop-computer-desktop-pc-human-hand-office-soft-focus-picture-picture-id811268074?b=1&k=20&m=811268074&s=170667a&w=0&h=OALZKoIe0vYQO0JdgtHjR2rMtfMhiYQ_kPBzipanPJU=" width="100%" height="100%"
+            <Grid item className='backImage'>
+                <img src="https://media.istockphoto.com/photos/laptop-computer-desktop-pc-human-hand-office-soft-focus-picture-picture-id811268074?b=1&k=20&m=811268074&s=170667a&w=0&h=OALZKoIe0vYQO0JdgtHjR2rMtfMhiYQ_kPBzipanPJU=" width="100%" height="100%"
                 alt="" />
             </Grid>
-            <Grid item xs={12} sm={5} justifyContent="center" style={{ padding: "20px", flexDirection: "column", alignItems: "center",marginTop:"80px" }}  >
+            <Grid item  className='form' justifyContent="center" style={{ padding: "20px", flexDirection: "column", alignItems: "center",marginTop:"80px" }}  >
                 <div style={{ justifyContent: "center", alignItems: "center", display: "flex" }}>
                     <Avatar style={{ backgroundColor: "#f50057" }}><LockOutlinedIcon /></Avatar>
                 </div>

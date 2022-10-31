@@ -1,10 +1,15 @@
-
-  @media screen and (max-width: 600px) {
-    .backImage {
-        display: none;
-    }
-    /* .loginPage{
-        margin-top: 50px;
-    } */
+.backImage{
+  width: 60%;
+}
+.form{
+  width: 40%;
+}
+ @media only screen and (max-width: 900px) {
+  .backImage {
+      display: none;
+  }
+  .form{
+    width: 100%;
   }
   
+}

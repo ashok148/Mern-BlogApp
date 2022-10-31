@@ -77,6 +77,7 @@ const CreateBlogModal = (props) => {
                             />
                             <InputBase
                                 style={{ padding: "10px" }}
+                                className="desc"
                                 required
                                 fullWidth
                                 name="description"
@@ -84,7 +85,7 @@ const CreateBlogModal = (props) => {
                                 id="description"
                                 placeholder="Write post description.."
                                 multiline
-                                maxRows={20}
+                                maxRows={13}
                                 value={blogData.description}
                                 onChange={handleChange}
                             />

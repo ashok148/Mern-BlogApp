@@ -8,6 +8,8 @@ import Home from './components/Home/Home';
 import UserBlog from './components/Bolgs/UserBlogs';
 import AllBlog from './components/Bolgs/AllBlog';
 import EditBlog from './components/Home/EditBlog';
+import Header from './components/layouts/Header/Header';
+import Footer from './components/layouts/Footer/Footer';
 
 function App() {
   const isAuthenticated = useSelector((state) => state.isAuthenticated);
@@ -17,7 +19,9 @@ function App() {
   return (
     <React.Fragment>
     {/* {window.location.pathname === "/login" || window.location.pathname === "/signup" ? "" :<Header /> } */}
+    <Header />
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
@@ -26,6 +30,7 @@ function App() {
         <Route path="/myblogs/:id" element={<PrivateRoute><EditBlog /></PrivateRoute>} />
       </Routes>
       {/* {window.location.pathname === "/login" || window.location.pathname === "/signup" ? "" :<Footer /> } */}
+      <Footer />
     </React.Fragment>
   );
 }

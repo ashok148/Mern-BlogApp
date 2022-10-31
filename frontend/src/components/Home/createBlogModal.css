@@ -34,3 +34,10 @@
 .Btn {
     background-color: #ff9224 !important;
 }
+
+@media only screen and (max-width: 599px) {
+    .paper {
+        width: 300px;
+        height: 500px;
+    }
+}

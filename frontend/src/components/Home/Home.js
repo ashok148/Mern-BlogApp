@@ -5,8 +5,6 @@ import { Typography, Button } from '@material-ui/core';
 import CreateBlogModal from './CreateBlogModal';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Header from '../layouts/Header/Header';
-import Footer from '../layouts/Footer/Footer';
 
 const Home = () => {
     const isAuthenticated = useSelector((state) => state.isAuthenticated);
@@ -19,7 +17,6 @@ const Home = () => {
 
     return (
         <>
-            <Header />
             <div >
                 <CreateBlogModal
                     open={openModal}
@@ -41,7 +38,6 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </div>
-            <Footer />
         </>
     );
 }

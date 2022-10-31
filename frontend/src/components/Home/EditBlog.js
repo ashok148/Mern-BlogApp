@@ -4,8 +4,6 @@ import "./createBlogModal.css";
 import { Button, Grid, TextField, Typography, InputLabel } from "@mui/material";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import Header from "../layouts/Header/Header";
-import Footer from "../layouts/Footer/Footer";
 
 const BlogDetail = () => {
     const navigate = useNavigate();
@@ -58,7 +56,6 @@ const BlogDetail = () => {
 
     return (
         <>
-            <Header />
             <div style={{ margin: "150px 20px 20px 20px" }}>
                 {inputs && (
                     <Grid width='70%' margin='10px auto' minHeight="60vh">
@@ -106,7 +103,6 @@ const BlogDetail = () => {
                     </Grid>
                 )}
             </div>
-            <Footer />
         </>
     );
 };

@@ -2,8 +2,6 @@ import { Grid } from '@mui/material';
 import BlogCard from './BlogCard';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Header from "../layouts/Header/Header";
-import Footer from "../layouts/Footer/Footer";
 
 const AllBlog = () => {
     const [blogs, setBlogs] = useState({});
@@ -23,7 +21,6 @@ const AllBlog = () => {
     console.log(blogs);
     return (
         <>
-            <Header />
             <div style={{ padding: "110px 20px 0px 20px", height: "auto", minHeight: "60vh" }}>
                 <Grid container style={{ display: "flex", gap: "20px", justifyContent: "center", flexDirection: "row" }} >
                     {blogs[0] && blogs?.map((index, i) => {
@@ -42,7 +39,6 @@ const AllBlog = () => {
                     })}
                 </Grid>
             </div>
-            <Footer />
         </>
     );
 }
